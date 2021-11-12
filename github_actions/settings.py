@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-u3*y@&w-n=#rkrl)7h%+_i@))z8u-r64ilv4vlxg9@t&0z)4uv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 # Application definition
 
@@ -75,7 +75,7 @@ if getenv('GITHUB_WORKFLOW'):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'github-actions',
+            'NAME': 'github_actions',
             'USER': 'postgres',
             'PASSWORD': 'postgres',
             'HOST': 'localhost',
@@ -85,8 +85,12 @@ if getenv('GITHUB_WORKFLOW'):
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'antonio_silva_d',
+            'USER': 'antonio_silva',
+            'PASSWORD': 'antonio_silva123*',
+            'ALLOWED_HOSTS': ['104.237.129.63'],
+            'PORT': '5432'
         }
     }
 
