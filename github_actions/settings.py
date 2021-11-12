@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import sys
+from os import getenv, environ as env
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,10 +26,6 @@ SECRET_KEY = 'django-insecure-u3*y@&w-n=#rkrl)7h%+_i@))z8u-r64ilv4vlxg9@t&0z)4uv
 DEBUG = True
 
 ALLOWED_HOSTS = []
-print('0: ')
-print(sys)
-print()
-print()
 
 # Application definition
 
@@ -75,7 +71,7 @@ WSGI_APPLICATION = 'github_actions.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-if os.getenv('GITHUB_WORKFLOW'):
+if getenv('GITHUB_WORKFLOW'):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
