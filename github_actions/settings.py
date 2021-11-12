@@ -90,7 +90,7 @@ else:
             'USER': 'antonio_silva',
             'PASSWORD': 'antonio_silva123*',
             'ALLOWED_HOSTS': ['104.237.129.63'],
-            'PORT': '5433'
+            'PORT': '5432'
         }
     }
 
